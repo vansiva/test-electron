@@ -1,0 +1,11 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+body{
+    background: #d3d2d2!important;
+}
+.login-section{
+    top: 50%;
+    position: absolute;
+    text-align: center;
+}

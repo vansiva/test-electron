@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Admin Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.datepick.css"> 
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+        rel = "stylesheet">
+        <link rel="stylesheet" href="https://fengyuanchen.github.io/datepicker/css/datepicker.css">
+        <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"/>
+        
+    </head>
+    <body>
+        <div id="notification" class="hidden">
+            <p id="message"></p>
+            <button id="close-button" onClick="closeNotification()">
+              Close
+            </button>
+            <button id="restart-button" onClick="restartApp()" class="hidden">
+              Restart
+            </button>
+          </div>
+        <section id="admin-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="login-banner">
+                        <!-- <button id="trigger">Click it to see the effect in this interface.</button> -->
+
+                        <input type="text" id="field" value="ADMIN" style="display:none;"/>
+                        <input type="button" class='in' id="admin" value="Admin" />
+                        <input type="text" id="field" value="ADMIN" style="display:none;"/>
+                        <input type="button" id="staff" class="in" value="Staff" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+            <form class="adminForm" >
+                <h4>Admin Login</h4>
+                <div class="login-error-message"></div>
+            <div class="form-group">
+                <input type="text" id="email" class="form-control" placeholder="Email Address">
+                <input type="submit" class="btn btn-success" id="admin-email" value="Sign In">
+            </div>
+        </form>
+        <div class="admin-otp-form">
+            <h4 class="otp-label">Enter OTP</h4>
+            <p class="admin-email-otp"></p>
+            <form>
+               <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="tel" maxlength="6" class="form-control login-otp">
+               <input type="submit" class="email-otp btn btn-success" value="SUBMIT" />
+            </form>
+            <form>
+         </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row store-list" id="store-list">
+                
+                
+            </div>
+        </div>
+        <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="c">Transaction</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container-fluid dashboard" id="">
+            <div class="row" style="background-color: yellow;margin-bottom: 20px;">
+                <div class="col-md-6">
+                    <p><img src="assets/images/logo.png" class="logo"></p>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left"> <img src="" class="media-object store-logo" style="width:40px; padding-top:6px;   padding-right: 6px;"> </div>
+                        <div class="media-body">
+                            <h4 class="media-heading store-name"></h4>
+                            <p class="branchs"></p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-2">
+                    
+<div class="dropdown">
+    <button class="dropbtn"><i class='far fa-user-circle'></i></button>
+  <div class="dropdown-content">
+    
+    <a class="logout">Logout</a>
+  </div>
+</div>
+      
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class=""><span class='dashboardBtn'>Dashboard <i class="fa fa-area-chart"></i></span><span class="transaction-btn">Transaction <i class="fa fa-th-list"></i></span><span>Select Store <select id="drop-down"><option>----Select Store----</option></select></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid hide-section" id="">
+                <div class="row">
+                    <div class="col-md-12">
+                    <p class="billing-heading">Current Billing Period:<span></span></p>
+                </div>
+                    <div class="col-md-3">
+                    <div class="bg-info">
+                        <div class="active-branch">
+                            <form class="search-form">
+                                <label>Active Branch</label>
+                                <select class="branch-list form-control mr-sm-2" id="branch-list"></select>
+                            </form>
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-3">
+                        <div class="bg-info">
+                            <div class="media border p-3">
+                                <img src="assets/images/credit-card.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                                <div class="media-body">
+                                  <h4>Znapay</h4>
+                                  <p id="znapay-box">
+                                    <span class="float-left">Count<br>AED <b class="z-count"></b></span>
+                                    <span class="float-right">Revenue<br>AED <b class="z-value"></b></span>
+                                </p>      
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                
+                <div class="col-md-3">
+                        <div class="bg-info">
+                            <div class="media border p-3">
+                                <img src="assets/images/redemption.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                                <div class="media-body">
+                                  <h4>Redemptions</h4>
+                                  <p id="redemption-box">
+                                    <span class="float-left">
+                                        Count<br>AED <b class="z-count"></b>
+                                    </span>
+                                    <span class="float-right">Revenue<br>AED <b class="z-value"></b>
+                                    </span>
+                                </p>      
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                
+                <div class="col-md-3">
+                        <div class="bg-info">
+                            <div class="media border p-3">
+                                <img src="assets/images/takeaway.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                                <div class="media-body">
+                                  <h4>Takeaway</h4>
+                                  <p id="takeaway-box">
+                                    <span class="float-left">Count<br>AED <b class="z-count"></b></span>
+                                    <span class="float-right">Revenue<br>AED <b class="z-value"></b></span>
+                                </p>      
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id='menu-container'>
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="menu-head">
+                            <p class="pull-left">Transactions</p>
+                            <ul class="nav nav-pills pull-right">
+                                <li class="nav-item" id="today"> <a class="nav-link active" data-toggle="pill" href="#flamingo" role="tab" aria-controls="pills-flamingo" aria-selected="true">Today</a> </li>
+                                <li class="nav-item" id="7"> <a class="nav-link" data-toggle="pill" href="#cuckoo" role="tab" aria-controls="pills-cuckoo" aria-selected="false">7 Days</a> </li>
+                                <li class="nav-item" id="15"> <a class="nav-link" data-toggle="pill" href="#ostrich" role="tab" aria-controls="pills-ostrich" aria-selected="false">15 Days</a> </li>
+                                <li class="nav-item" id="30"> <a class="nav-link" data-toggle="pill" href="#ostrich1" role="tab" aria-controls="pills-ostrich1" aria-selected="false">30 Days</a> </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content mt-3">
+                            <div class="tab-pane fade show active" id="flamingo" role="tabpanel" aria-labelledby="flamingo-tab">
+                                <table class="table table-striped table-bordered dash-table cb">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 8%;">Ref ID</th>
+                                            <th style="width: 20%;">Username</th>
+                                            <th style="width: 18%;">Date</th>
+                                            <th style="width: 12%;">Type</th>
+                                            <th style="width: 10%;">Offer</th>
+                                            <th style="width: 20%;">Location</th>
+                                            <th style="width: 12%;">Bill</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="chart-data" id="chart-data"> </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <div class="container-fluid" id="show">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Transactions</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <label for="email" class="mr-sm-2"></label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="From Date" id="f-date">
+                    <label for="pwd" class="mr-sm-2"></label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="To Date" id="t-date">
+                    <label for="pwd" class="mr-sm-2"></label>
+                    <select class="form-control mb-2 mr-sm-2" id="offerType">
+                        <option value="znapay">Znapay</option>
+                        <option value="redeem-voucher">Redeem Voucher</option>
+                        <option value="takeaway">Takeaway</option>
+                    </select>
+                    
+                    <input type="submit" class="transaction-submit btn btn-primary mb-2" value="Get Transaction">
+                  </form>
+                  <p  class="not-found"></p>
+                  <table id="transtable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">Ref ID</th>
+                            <th style="width: 25%;">Date & Time</th>
+                            <th style="width: 15%;">Offer Type</th>
+                            <th class="text-center" style="width: 10%;">Offer</th>
+                            <th style="width: 25%;">Location</th>   
+                            <th style="width: 15%;" class="text-center">Bill Amount</th>
+                            <th style=" width: 10%;" class="text-center">View</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list"> </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="staff-container">
+    <div class="container-fluid">
+        <div class='row staff-row1'>
+            <div class='col-md-12'>
+                <h4>Staff Login</h4>
+               <form>
+                  <div class="login-error-message"></div>
+                  <div class="form-group"> 
+                     <input type="number" maxlength='4' oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" id="store-code" placeholder="Code" inputmode="email">  
+                  
+                </div>
+                  <input type="submit"  class="btn btn-success btn-flat m-b-30 m-t-30" id="staff-codes" value="Get Access">
+               </form>
+</div>
+</div>
+
+</div>
+
+<div class="container-fluid staff-dashboard" id="">
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-6">
+            <p><img src="assets/images/logo.png" class="logo"></p>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="media">
+                <div class="media-left"> <img src="" class="media-object staff-store-logo" style="width:40px; padding-top:10px;   padding-right: 6px;"> </div>
+                <div class="media-body">
+                    <h4 class="media-heading staff-store-name"></h4>
+                    <p class="staff-store-branchs"></p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-2">
+            <div class="notification">
+                <audio id="notification" style="display: none;">
+                  <source src="https://www.znap.cash/partners-demo/assets/audio/notification.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+              
+<div class="dropdown">
+<button class="dropbtn"><i class='far fa-user-circle'></i></button>
+<div class="dropdown-content">
+
+<a class="logout">Logout</a>
+</div>
+</div>
+
+</div></div>
+        <div class="row staff-row2">
+            <form class="form-inline">       
+               
+                <input type="text" class="form-control" placeholder="From Date" id="from-date">
+              
+                <input type="text" class="form-control" placeholder="To Date" id="to-date">
+                
+                <button type="submit" class="btn btn-primary get-transaction">GET TRANSACTION</button>
+            
+              </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id='new-transaction'> <span class="">New Transaction Available</span> </div>
+            <div class="col-md-12 new-transaction"> 
+                <div class="float-left text-left"><strong class="card-title">List of Transactions</strong></div>
+                <div class="float-right text-right" id="transaction-dates"></div>
+             </div>
+
+            <table id="staff-transtable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Ref ID</th>
+                        <th style="width: 25%;">Date & Time</th>
+                        <th style="width: 15%;">Offer Type</th>
+                        <th style="width: 10%;">Offer</th>
+                        <th style="width: 25%;">Location</th>
+                        <th style="width: 15%;" class="text-center">Bill Amount</th>
+                        <th style="width: 10%;">Help</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-lists"> </tbody>
+            </table>
+                    </div>
+            
+        </div>
+    </div>
+</section>
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.slim.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="assets/js/admin.js"></script>
+        
+        <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+         
+        <!-- <script src = "https://code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src = "https://fengyuanchen.github.io/datepicker/js/datepicker.js"></script>
+        <!-- <script src="assets/js/renderer.js"></script> -->
+        
+<script>
+    
+ $( "#from-date, #f-date" ).datepicker({
+    format: "dd-mm-yyyy",
+    autoHide: true,
+    zIndex: 2048
+ });
+ $( "#to-date, #t-date" ).datepicker({
+    format: "dd-mm-yyyy",
+    autoHide: true,
+    zIndex: 2048
+ });
+ const { ipcRenderer } = require('electron');
+ const notification = document.getElementById('notification');
+const message = document.getElementById('message');
+const restartButton = document.getElementById('restart-button');
+ipcRenderer.on('update_available', () => {
+  ipcRenderer.removeAllListeners('update_available');
+  message.innerText = 'A new update is available. Downloading now...';
+  notification.classList.remove('hidden');
+});
+ipcRenderer.on('update_downloaded', () => {
+  ipcRenderer.removeAllListeners('update_downloaded');
+  message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
+  restartButton.classList.remove('hidden');
+  notification.classList.remove('hidden');
+});
+function closeNotification() {
+  notification.classList.add('hidden');
+}
+function restartApp() {
+  ipcRenderer.send('restart_app');
+}
+ </script>
+    </body>
+</html>

@@ -1,0 +1,522 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600&display=swap');
+.print{
+        font-family: 'Saira Condensed', sans-serif;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+body,p,h1,h2,h3,h4,h5,h6,input{
+    font-family: 'IBM Plex Sans', sans-serif!important;
+}
+select#drop-down {
+    border: none;
+    padding: 1px 4px;
+    border-radius: 4px;
+ 
+}
+p,input{   font-family: 'IBMPlexSansRegular';}
+/* Add styles here to customize the appearance of your app */
+body{
+ 
+    background: #d3d2d2!important;
+}
+.login-banner{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+.login-banner #admin{
+    padding: 7%;
+    border: none;
+    margin-right: 10px;
+    box-shadow: 0px 0px 14px #b7b2b2;
+    border-radius: 6px;
+    font-size: 20px;
+}
+.login-banner #staff{
+    padding: 7% 8% 7% 8%;
+    border: none;
+    box-shadow: 0px 0px 14px #b7b2b2;
+    border-radius: 6px;
+    font-size: 20px;
+}
+.adminForm{
+    width: 50%;
+    background: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 12%;
+    z-index: -9999;
+}
+input#admin-email {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 0;
+    background: #333;
+
+}
+input.email-otp.btn.btn-success {
+    background: #333;
+    border-color: #333;
+}
+.admin-otp-form h4 {
+    font-size: 21px;
+    margin-bottom: 0px;
+}
+.admin-otp-form 
+{
+    width: 40%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    margin-top: 12%;
+    text-align: center;
+    box-shadow: 0px 0px 4px #9d9a9a;
+    border-radius: 4px;
+}
+div#store-list {
+    width: 40%;
+    margin: 0 auto; 
+    margin-top: 12%;
+    padding: 20px;
+}
+h4.media-heading.store-name {
+    color: #333;
+    font-size: 16px;
+    padding-top: 4px;
+}
+p.branchs {
+    font-size: 13px;
+}
+p.billing-heading span {
+    font-weight: 600;
+    margin-left: 10px;
+}
+div#store-list img {
+    width: 150px;
+    height: 120px;
+    margin: 0 auto;
+    display: table;
+}
+div#store-list .bg-info{
+    background-color: #fff!important;
+    text-align: center;
+    box-shadow: 0px 0px 12px #d5d0d0!important;
+    padding: 10px;
+}
+.admin-email-otp {
+    color: red;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.dashboard .media{
+    float: right;
+    padding: 14px 14px 0px 14px;
+}
+img.logo {
+    width: 122px;
+    padding-top: 18px;
+}
+.admin-otp-form .login-otp {
+    margin-bottom: 10px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 10px;
+    color: #aba6a6;
+}
+p.store-head {
+    margin-bottom: 0px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+.dashboard .row:nth-child(1) {
+    background: #fff!important;
+    margin-top: 10px;
+    box-shadow: 0px 2px 4px #ada9a9;
+}
+.dashboard .bg-info {
+    background-color: #fff!important;
+    border: 1px solid #c7c7cf;
+}
+.dashboard .media h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0px; 
+}    
+.container-fluid.dashboard p span {
+    background: #60bdaa;
+    margin-right: 8px;
+    padding: 8px 18px;
+    border-radius: 2px;
+    color: #fff;
+}
+.container-fluid.dashboard p {
+    display: flex;
+}
+p.billing-heading {
+    background: #fff;
+    padding: 10px;
+    font-weight: 400;
+    border: 1px solid #bbb8b8;
+}
+.container-fluid.hide-section .col-md-3 .bg-info {
+    background: #fff!important;
+    border: 1px solid #bbb8b8;
+}
+div#menu-container {
+    background: #fff;
+    margin: 16px 0px 0px 0px;
+    padding: 20px;
+}
+.menu-head p {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #60bdaa!important;
+}
+tbody#chart-data p {
+    text-align: center;
+    padding-top: 10px;
+    color: red;
+}
+tbody#chart-data p span {
+    background: #60bdaa;
+    padding: 4px 8px;
+    color: #fff;
+    border-radius: 4px;
+}
+#show .row{
+background: #fff;
+margin: 0px;
+padding: 8px;}
+.nav-pills .nav-link {
+    border-radius: 0.25rem;
+    color: #333!important;
+}
+.login-error-message {
+    color: red;
+    text-align: center;
+    padding-bottom: 6px;
+}
+input#email {
+    z-index: -9999;
+}
+.fg{
+    padding: 25px;
+}
+.active-branch {
+    padding: 22px;
+}
+div#tableHide #menu-container {
+    background: #fff;
+    margin: 0px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* box-shadow: 0px 0px 12px #9b9494; */
+    border: 1px solid #c7c7c7;
+}
+
+.print h5{
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 20px;
+    margin-bottom: 2px;
+
+  }
+  .print .address p {
+    margin-bottom: 0;
+    border-bottom: 2px dashed #000;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 14px;
+    color: #ada6a6;
+  }
+  .location span.pull-left {
+    background: #ff0081;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px 18px;
+    border-radius: 5px;
+}
+.print .customer p:nth-child(1) {
+    margin-bottom: 26px;
+    font-size: 17px;
+}
+td.bill-amount {
+    font-weight: 800;
+    color: #8f8a8a;
+}
+div#new-transaction {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+.row.staff-row1 h4, .adminForm h4{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 19px;
+    color: #747171;
+}
+#transaction-list .odd td:nth-child(1),
+#transaction-list .even td:nth-child(1) {
+    color: #ff0099;
+}
+  .print .address {
+      margin-bottom: 16px;
+  } 
+  .print .customer p {
+      margin-bottom: 0px;
+      text-align: left;
+  }
+  .print .pull-left{
+    float: left;
+  }
+  .print .pull-right{
+    float: right;
+  }
+  .print .customer p:nth-child(2){
+    clear: both;
+    margin-bottom: 0px;
+    border-bottom: 2px dashed #000;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 14px;
+  }
+  .print .customer p{
+    text-align: left;
+  }
+  .print .customer {
+      overflow: auto;
+  }
+  
+  .print .location{
+    overflow: auto;
+    clear: both;
+  }
+  .print .table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+      margin-top: 0px;
+  }
+  .print .table th, .total-amount {
+      border-top: 2px dashed #000!important;
+      border-bottom: 2px dashed #000!important;
+  }
+  .print .table td{
+    border: none;
+  }.print td.view {
+    color: #e73cb2;
+    text-decoration: underline;
+}
+  .print .table td:nth-child(odd) {
+    border: none;
+    text-align: left;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+p.not-found {
+    text-align: center;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    padding: 34px 20px 20px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+td.view {
+    color: #e51c94;
+    text-decoration: underline;
+}
+
+
+  .print .table td:nth-child(even) {
+    border: none;
+    text-align: right;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+tr.payment-amount td {
+    padding-bottom: 12px!important;
+    font-size: 22px!important;
+}
+tr.payment-amount {
+    border-bottom: 2px dashed #000;
+}
+  .print .total-amount td:nth-child(1){
+    text-align: right;
+    font-weight: 600;
+    font-size: 20px!important;
+  }
+  .print .total-amount td:nth-child(2){
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px!important;
+  }
+
+
+  /* dropdown */
+  .dropbtn {
+    background-color: transparent;
+    color: #333;
+    padding: 16px;
+    font-size: 32px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #ff00a5;
+}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  /*staff*/
+  .staff-row1{
+    width: 40%;
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 10%;
+  }
+  input#staff-codes {
+    width: 100%;
+    background: #333;
+    border: none;
+    border-radius: 0px;
+    padding: 8px;
+    text-transform: uppercase;
+}
+.row.staff-row2 {
+    margin: 7px;
+    background: #fff;
+    padding: 20px;
+}
+.form-inline .btn{
+    color: #fff;
+    background-color: #79d7c1;
+    border-color: #79d7c1;
+    margin-left: 2px;
+}
+.staff-dashboard .row:nth-child(3) {
+    background: #fff;
+    margin: 8px;
+    padding: 12px;
+}
+div#transaction-dates {
+    color: #f953af;
+}
+h2#swal2-title {
+    font-size: 20px;
+}
+
+h4.media-heading.staff-store-name {
+    font-size: 18px;
+    padding-top: 6px;
+    margin-bottom: 0;
+}
+.container-fluid.staff-dashboard .media {
+    padding-top: 10px;
+}
+td.reference-id {
+    color: #e757a7;
+}
+span#alarm {
+    font-size: 16px;
+    background: #e74b9a;
+    color: #fff;
+    padding: 4px 12px 6px 12px;
+    border-radius: 6px;
+    top: -6px;
+    position: relative;
+}
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+}
+.col-md-12.new-transaction {
+    margin: 0;
+    padding: 0;
+}
+.media-body h4 {
+    font-size: 17px;
+    color: #f7139c;
+}
+.dropdown:hover .dropbtn {
+    background-color: transparent!important;
+}
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    box-shadow: 0px 0px 2px #8f8989;
+    padding: 20px;
+}
+.row.staff-row2 {
+    margin: 7px;
+}
+.container-fluid.staff-dashboard .row:nth-child(1) {
+    background-color: #fff;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* update */
+#notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .hidden {
+    display: none;
+  } 

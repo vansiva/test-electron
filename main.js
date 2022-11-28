@@ -1,17 +1,17 @@
 const electron = require('electron');
+const log = require('electron-log');
 const path = require('path');
-const { ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
-// Module to control application life.
+const { ipcMain } = require('electron');
 const app = electron.app;
 
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-log.transports.file.resolvePath = () => path.join('F:\electronjs\electron-project', '/logs/main.log');
+log.transports.file.resolvePath = () => path.join('F:/electronjs/electron-project', '/logs/m.log');
 
 log.info("Application version" + app.getVersion())
 log.info('Hello, log');
-log.warn('loading');
+log.warn('loading...');
 const url = require('url')
 
 // Keep a global reference of the windows object, if you don't, the window will
@@ -85,11 +85,11 @@ app.whenReady().then(() => {
   createWindow()
   // updateInterval = setInterval(() => autoUpdater.checkForUpdates());
   autoUpdater.checkForUpdatesAndNotify();
-  app.on('activate', function () {
+  // app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+  //   if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  // })
 })
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

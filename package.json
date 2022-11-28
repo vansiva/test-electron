@@ -1,6 +1,6 @@
 {
-  "name": "Znap Partner App",
-  "version": "1.3.0",
+  "name": "znap",
+  "version": "8.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -13,7 +13,7 @@
       {
         "provider": "github",
         "owner": "vansiva",
-        "repo": "testElectron"
+        "repo": "test-electron"
       }
     ]
   },
